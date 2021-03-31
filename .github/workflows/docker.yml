@@ -57,7 +57,7 @@ jobs:
       - name: Invoke hub staging deployment hook
         uses: distributhor/workflow-webhook@v1
         env:
-          webhook_type: json
+          webhook_type: json-extended
           webhook_url: ${{ secrets.DEPLOY_WEBHOOK_URL }}
           webhook_secret: ${{ secrets.DEPLOY_WEBHOOK_SECRET }}
           data: '{ "shaToDeploy": "${{needs.docker-build-push.outputs.sha_short}}" }'
